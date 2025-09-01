@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.layout__content {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    background: var(--muted);
+}
+
+.layout_main__holder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 1rem;
+    gap: 0.5rem;
+}
+
+.layout__main {
+    flex: 1;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 2px 8px;
+}

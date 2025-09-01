@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main: #000;
+
+    --primary: #2A4E63;
+    --secondary: #5DA399;
+
+    --muted: #f8f9fa;
+
+    --background: #F8FAFC;
+
+    --avatar-sm: 34px;
+    --avatar-md: 50px;
+    --avatar-lg: 64px;
+
+    --border-size: 0.3em;
+
+    --shadow-base: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+    --box-secondary: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}

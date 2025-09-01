@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Johnson",
+    "role": "admin"
+  },
+  {
+    "name": "Smith",
+    "role": "contributor"
+  },
+  {
+    "name": "Brown",
+    "role": "contributor"
+  },
+  {
+    "name": "White",
+    "role": "contributor"
+  },
+  {
+    "name": "Davis",
+    "role": "contributor"
+  },
+  {
+    "name": "Miller",
+    "role": "contributor"
+  },
+  {
+    "name": "Lee",
+    "role": "contributor"
+  },
+  {
+    "name": "Green",
+    "role": "contributor"
+  },
+  {
+    "name": "Patel",
+    "role": "contributor"
+  },
+  {
+    "name": "Harris",
+    "role": "contributor"
+  }
+]

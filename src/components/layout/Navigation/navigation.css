@@ -1,0 +1,15 @@
+.navigation {
+    display: flex;
+    padding: 1rem;
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+.navigation__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}

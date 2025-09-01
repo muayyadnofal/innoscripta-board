@@ -1,0 +1,116 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    min-width: 180px;
+    width: 100%;
+    background: var(--muted);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-base);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.dropdown-checkbox-item input {
+    margin-right: 0.5rem;
+}
+
+.checkbox-avatar {
+    display: inline-flex;
+}
+
+
+.dropdown-item {
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    &.selected {
+        background-color: var(--primary);
+        color: var(--muted);
+    }
+
+    &:hover {
+        color: var(--muted);
+    }
+}
+
+.dropdown-item.is-first {
+    &.selected {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    &:hover {
+        background-color: var(--primary);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+}
+
+.dropdown-item {
+    &:hover {
+        background-color: var(--primary);
+        filter: brightness(0.95);
+    }
+
+    &&.selected {
+        background-color: var(--primary);
+    }
+}
+
+.dropdown-item.is-last {
+    &.selected {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    &:hover {
+        background-color: var(--primary);
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+}
+
+.dropdown-item.selected:hover {
+    filter: brightness(0.95);
+}
+
+.item-avatar {
+    display: inline-flex;
+}
+
+.search-loading {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #888;
+    text-align: center;
+}
