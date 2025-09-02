@@ -1,1600 +1,422 @@
 [
   {
     "id": "1",
-    "title": "Fix login bug",
+    "title": "Add role-based access control",
     "status": "Backlog",
     "priority": "high",
     "severity": 3,
-    "createdAt": "2025-07-09T10:00:00Z",
-    "assignee": "alice",
+    "createdAt": "2025-09-05T09:15:00Z",
+    "assignee": "Johnson",
     "tags": [
       "auth",
-      "bug"
+      "roles",
+      "feature"
     ]
   },
   {
     "id": "2",
-    "title": "Improve dashboard loading",
+    "title": "Fix UI overflow in dashboard",
     "status": "In Progress",
     "priority": "medium",
     "severity": 2,
-    "createdAt": "2025-07-08T12:00:00Z",
-    "assignee": "bob",
-    "tags": [
-      "performance"
-    ]
-  },
-  {
-    "id": "3",
-    "title": "Add dark mode",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-07-07T09:30:00Z",
-    "assignee": "carol",
-    "tags": [
-      "ui"
-    ]
-  },
-  {
-    "id": "1",
-    "title": "Fix login bug",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-07-09T10:00:00Z",
-    "assignee": "alice",
-    "tags": [
-      "auth",
-      "bug",
-      "critical",
-      "backend"
-    ],
-    "description": "Users are intermittently unable to log in due to a race condition between session creation and token verification. This leads to inconsistent authentication states and a poor user experience. We need to investigate the login flow, check concurrency handling, and ensure session tokens are refreshed consistently. Logs suggest this is happening under load spikes."
-  },
-  {
-    "id": "2",
-    "title": "Improve dashboard loading",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-07-08T12:00:00Z",
-    "assignee": "bob",
-    "tags": [
-      "performance",
-      "frontend",
-      "ux"
-    ],
-    "description": "The dashboard currently takes 4–6 seconds to load due to multiple blocking API requests. Users perceive the app as sluggish. Solution may involve batching requests, adding skeleton loaders, or leveraging caching strategies. The goal is to reduce first meaningful paint to under 2 seconds."
-  },
-  {
-    "id": "3",
-    "title": "Add dark mode",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-07-07T09:30:00Z",
-    "assignee": "carol",
+    "createdAt": "2025-09-06T14:30:00Z",
+    "assignee": "Smith",
     "tags": [
       "ui",
-      "theme",
-      "accessibility"
-    ],
-    "description": "Dark mode has been implemented using CSS variables and a theme switcher. This improves accessibility for users with light sensitivity and aligns with modern UI expectations. Next step is ensuring theme persistence across sessions and testing contrast ratios."
+      "bug",
+      "dashboard"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Optimize query performance for reports",
+    "status": "Backlog",
+    "priority": "high",
+    "severity": 2,
+    "createdAt": "2025-09-07T11:00:00Z",
+    "assignee": "Brown",
+    "tags": [
+      "db",
+      "performance",
+      "reports"
+    ]
   },
   {
     "id": "4",
-    "title": "Set up CI/CD pipeline",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-07-06T15:45:00Z",
-    "assignee": "dave",
+    "title": "Add dark mode support",
+    "status": "In Progress",
+    "priority": "low",
+    "severity": 1,
+    "createdAt": "2025-09-08T08:45:00Z",
+    "assignee": "White",
     "tags": [
-      "devops",
-      "automation",
-      "infrastructure"
-    ],
-    "description": "Currently, deployments are manual and error-prone. A proper CI/CD pipeline with GitHub Actions should be established to run tests, lint, and auto-deploy to staging. This will improve developer productivity and reduce deployment risks."
+      "ui",
+      "feature",
+      "theme"
+    ]
   },
   {
     "id": "5",
-    "title": "Refactor user profile page",
-    "status": "In Progress",
+    "title": "Fix file upload validation",
+    "status": "Done",
     "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-07-05T08:20:00Z",
-    "assignee": "eve",
+    "severity": 3,
+    "createdAt": "2025-09-09T17:20:00Z",
+    "assignee": "Davis",
     "tags": [
-      "frontend",
-      "refactor",
-      "ui"
-    ],
-    "description": "The profile page is bloated with inline logic and duplicated styles. It needs refactoring into smaller reusable components, improving readability and maintainability. The new design should include a responsive layout and consistent styling."
+      "bug",
+      "upload",
+      "validation"
+    ]
   },
   {
     "id": "6",
-    "title": "Database indexing for reports",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-07-04T14:10:00Z",
-    "assignee": "frank",
-    "tags": [
-      "database",
-      "performance",
-      "reports"
-    ],
-    "description": "Generating reports takes too long due to missing indexes on frequently queried fields. Adding appropriate indexes and analyzing query plans should reduce latency significantly, especially for analytics endpoints."
-  },
-  {
-    "id": "7",
-    "title": "Add two-factor authentication",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-07-03T11:00:00Z",
-    "assignee": "alice",
-    "tags": [
-      "security",
-      "auth",
-      "feature"
-    ],
-    "description": "To enhance account security, we need to implement two-factor authentication (2FA) using TOTP apps like Google Authenticator. This feature should be optional but recommended for all users. The UX should provide backup codes for recovery."
-  },
-  {
-    "id": "8",
-    "title": "Fix mobile navigation menu",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-07-02T17:30:00Z",
-    "assignee": "bob",
-    "tags": [
-      "mobile",
-      "ui",
-      "bug"
-    ],
-    "description": "On smaller screens, the navigation drawer overlaps content and doesn’t close properly when links are clicked. The issue was traced to CSS z-index conflicts. Fix applied with proper layering and click-to-close logic."
-  },
-  {
-    "id": "9",
-    "title": "Implement notification center",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-07-01T09:00:00Z",
-    "assignee": "carol",
-    "tags": [
-      "feature",
-      "notifications",
-      "frontend"
-    ],
-    "description": "Users need a centralized place to view all notifications (comments, mentions, assignments). The notification center should support unread indicators, batch clearing, and real-time updates. Accessibility support is required for screen readers."
-  },
-  {
-    "id": "10",
-    "title": "Migrate to TypeScript",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-30T13:15:00Z",
-    "assignee": "dave",
-    "tags": [
-      "typescript",
-      "refactor",
-      "codebase"
-    ],
-    "description": "The project is partially in TypeScript. Migration should be completed across modules to improve type safety and maintainability. Includes updating build scripts, fixing type errors, and ensuring proper linting."
-  },
-  {
-    "id": "11",
-    "title": "Accessibility audit",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-29T16:40:00Z",
-    "assignee": "eve",
-    "tags": [
-      "a11y",
-      "ui",
-      "testing"
-    ],
-    "description": "Run an accessibility audit using Lighthouse and axe-core to identify issues like missing alt text, low contrast ratios, and non-semantic HTML. Fixing these will make the app more inclusive and compliant with WCAG standards."
-  },
-  {
-    "id": "12",
-    "title": "Optimize image assets",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-28T10:50:00Z",
-    "assignee": "frank",
-    "tags": [
-      "performance",
-      "images",
-      "frontend"
-    ],
-    "description": "Image sizes were unnecessarily large, slowing down page load. Implemented lazy loading, compression, and modern formats (WebP/AVIF). Performance scores improved significantly in Lighthouse."
-  },
-  {
-    "id": "13",
-    "title": "Set up error monitoring",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-27T14:25:00Z",
-    "assignee": "alice",
-    "tags": [
-      "monitoring",
-      "logging",
-      "infrastructure"
-    ],
-    "description": "We need real-time error monitoring (Sentry or equivalent) to catch uncaught exceptions in frontend and backend. This allows proactive bug fixing before users are impacted."
-  },
-  {
-    "id": "14",
-    "title": "Improve onboarding flow",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-26T12:10:00Z",
-    "assignee": "bob",
-    "tags": [
-      "ux",
-      "frontend",
-      "onboarding"
-    ],
-    "description": "New users are dropping off during onboarding. Flow should be simplified with progress indicators, optional steps, and contextual tooltips. Success metrics: fewer drop-offs, higher activation rate."
-  },
-  {
-    "id": "15",
-    "title": "Implement role-based permissions",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-25T09:55:00Z",
-    "assignee": "carol",
-    "tags": [
-      "security",
-      "roles",
-      "backend"
-    ],
-    "description": "Current app lacks proper role-based access control. Implement RBAC so only admins can update statuses, priorities, and resolve issues. Contributors should have read-only access. Permissions should be enforced both in UI and API."
-  },
-  {
-    "id": "16",
-    "title": "Add unit tests for priority algorithm",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-24T08:00:00Z",
-    "assignee": "dave",
-    "tags": [
-      "testing",
-      "priority",
-      "algorithm"
-    ],
-    "description": "The issue sorting logic depends on severity, age, and rank. Add unit tests to ensure it’s stable and correct. Edge cases include ties, negative values, and recent vs old issues."
-  },
-  {
-    "id": "17",
-    "title": "Support multi-language UI",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-23T18:35:00Z",
-    "assignee": "eve",
-    "tags": [
-      "i18n",
-      "frontend",
-      "feature"
-    ],
-    "description": "Users in multiple regions requested localization. Add i18n support with English and Arabic to start. Ensure RTL layouts are supported. Translation keys should be extracted for easy updates."
-  },
-  {
-    "id": "18",
-    "title": "Implement activity log",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-22T15:30:00Z",
-    "assignee": "frank",
-    "tags": [
-      "feature",
-      "audit",
-      "backend"
-    ],
-    "description": "Admins need to track who did what and when. Implement an activity log capturing key user actions like login, issue updates, and role changes. Should support pagination and filtering by user/date."
-  },
-  {
-    "id": "19",
-    "title": "Integrate payment gateway",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-21T11:10:00Z",
-    "assignee": "alice",
-    "tags": [
-      "payments",
-      "backend",
-      "feature"
-    ],
-    "description": "Users must be able to pay via credit card and digital wallets. We plan to integrate with Stripe for reliability and global coverage. Security and PCI compliance must be prioritized. Sandbox integration first, then production rollout."
-  },
-  {
-    "id": "20",
-    "title": "Add offline support",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-20T13:25:00Z",
-    "assignee": "bob",
-    "tags": [
-      "pwa",
-      "feature",
-      "offline"
-    ],
-    "description": "When users lose connectivity, they should still be able to access cached data and queue actions for later sync. Service workers will be required, with a focus on reliability and proper conflict resolution."
-  },
-  {
-    "id": "21",
-    "title": "Redesign landing page",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-19T15:50:00Z",
-    "assignee": "carol",
-    "tags": [
-      "ui",
-      "marketing",
-      "frontend"
-    ],
-    "description": "The landing page looks outdated. Needs a fresh design with modern branding, clearer CTAs, and responsive layout. Performance optimization and SEO should also be addressed during the redesign."
-  },
-  {
-    "id": "22",
-    "title": "Enable SSO with Google & Microsoft",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-18T09:40:00Z",
-    "assignee": "dave",
-    "tags": [
-      "auth",
-      "sso",
-      "enterprise"
-    ],
-    "description": "Enterprise clients expect single sign-on (SSO) support. Integration with Google Workspace and Microsoft Azure AD is required. This will involve OAuth2 flows, token validation, and user provisioning rules."
-  },
-  {
-    "id": "23",
-    "title": "Fix email delivery failures",
-    "status": "Done",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-17T10:15:00Z",
-    "assignee": "eve",
-    "tags": [
-      "email",
-      "bug",
-      "backend"
-    ],
-    "description": "Transactional emails were intermittently failing due to SMTP timeouts. We migrated to a reliable third-party service (SendGrid) and implemented retry logic. Monitoring dashboards now track delivery success rate."
-  },
-  {
-    "id": "24",
-    "title": "Add bulk issue editing",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-16T14:05:00Z",
-    "assignee": "frank",
-    "tags": [
-      "feature",
-      "productivity",
-      "frontend"
-    ],
-    "description": "Users should be able to select multiple issues and update fields like assignee, status, or priority in bulk. This will reduce repetitive actions for project managers handling large boards."
-  },
-  {
-    "id": "25",
-    "title": "Implement API rate limiting",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-15T12:30:00Z",
-    "assignee": "alice",
-    "tags": [
-      "security",
-      "api",
-      "backend"
-    ],
-    "description": "Current APIs are vulnerable to abuse with no request throttling. We need per-user and per-IP rate limits, plus error responses when thresholds are exceeded. Logs should capture violations for analysis."
-  },
-  {
-    "id": "26",
-    "title": "Add export to CSV/PDF",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-14T11:45:00Z",
-    "assignee": "bob",
-    "tags": [
-      "feature",
-      "reports",
-      "frontend"
-    ],
-    "description": "Users requested the ability to export issue lists and reports as CSV and PDF. Exports should respect filters and search, and PDFs must include branding. Ensure performance for large data sets."
-  },
-  {
-    "id": "27",
-    "title": "Add global search bar",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-13T09:25:00Z",
-    "assignee": "carol",
-    "tags": [
-      "search",
-      "feature",
-      "ux"
-    ],
-    "description": "Users struggle to find issues across projects. Implement a global search bar with fuzzy matching, keyboard shortcuts, and highlighting. Results should include issues, tags, and assignees."
-  },
-  {
-    "id": "28",
-    "title": "Fix timezone inconsistencies",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-12T08:55:00Z",
-    "assignee": "dave",
-    "tags": [
-      "bug",
-      "datetime",
-      "backend"
-    ],
-    "description": "Timestamps are inconsistent because server uses UTC while client applies local offsets incorrectly. We need a unified timezone strategy, likely UTC storage with localized display. Add automated tests."
-  },
-  {
-    "id": "29",
-    "title": "Add tagging system for issues",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-11T07:20:00Z",
-    "assignee": "eve",
-    "tags": [
-      "feature",
-      "tags",
-      "frontend"
-    ],
-    "description": "Currently tags are hardcoded. We should let users create, edit, and delete tags. Tags should be color-coded and filterable. Consider limiting number of tags per issue for readability."
-  },
-  {
-    "id": "30",
-    "title": "Implement autosave in editors",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-10T15:35:00Z",
-    "assignee": "frank",
-    "tags": [
-      "feature",
-      "editor",
-      "ux"
-    ],
-    "description": "When editing issue descriptions or comments, changes should auto-save every few seconds to prevent data loss. Include a visible 'last saved' indicator. Consider throttling to avoid server overload."
-  },
-  {
-    "id": "31",
-    "title": "Support custom fields",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-09T17:40:00Z",
-    "assignee": "alice",
-    "tags": [
-      "feature",
-      "customization",
-      "backend"
-    ],
-    "description": "Organizations may require fields like 'Customer Impact' or 'Department'. Add support for custom fields with validation. Ensure they show up in forms, filters, and exports. Store schema flexibly."
-  },
-  {
-    "id": "32",
-    "title": "Add Kanban drag & drop",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-08T09:10:00Z",
-    "assignee": "bob",
-    "tags": [
-      "frontend",
-      "dnd",
-      "ux"
-    ],
-    "description": "Allow users to move issues between columns via drag and drop. Optimistic UI updates with rollback are required. Keyboard accessibility should also be supported for inclusivity."
-  },
-  {
-    "id": "33",
-    "title": "Add custom notifications settings",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-07T11:50:00Z",
-    "assignee": "carol",
-    "tags": [
-      "notifications",
-      "feature",
-      "ux"
-    ],
-    "description": "Users want control over which notifications they receive (email, push, in-app). Add a settings panel with granular toggles. Default should be minimal noise but important events should stay enabled."
-  },
-  {
-    "id": "34",
-    "title": "Fix memory leak in chat module",
-    "status": "Done",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-06-06T13:45:00Z",
-    "assignee": "dave",
-    "tags": [
-      "bug",
-      "chat",
-      "performance"
-    ],
-    "description": "Long chat sessions caused memory usage to grow indefinitely due to unclosed WebSocket references. We refactored connection handling and added cleanup logic. Memory footprint now stays stable."
-  },
-  {
-    "id": "35",
-    "title": "Implement data retention policy",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-05T08:35:00Z",
-    "assignee": "eve",
-    "tags": [
-      "compliance",
-      "security",
-      "backend"
-    ],
-    "description": "Some data should auto-expire after a retention period to meet compliance. Implement scheduled jobs to purge old data safely, and provide audit logs to track deletions."
-  },
-  {
-    "id": "36",
-    "title": "Add custom themes",
-    "status": "In Progress",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-04T16:00:00Z",
-    "assignee": "frank",
-    "tags": [
-      "ui",
-      "customization",
-      "feature"
-    ],
-    "description": "Beyond light/dark mode, allow users to select custom color themes. Store preferences per user. Ensure WCAG contrast compliance and provide a reset to default option."
-  },
-  {
-    "id": "37",
-    "title": "Implement advanced filters",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-06-03T12:15:00Z",
-    "assignee": "alice",
-    "tags": [
-      "filters",
-      "frontend",
-      "ux"
-    ],
-    "description": "Current filters are basic. Add support for multiple criteria (status, severity, assignee, tags) combined with AND/OR logic. Saveable filter presets would improve productivity for power users."
-  },
-  {
-    "id": "38",
-    "title": "Add recurring tasks support",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-06-02T10:05:00Z",
-    "assignee": "bob",
-    "tags": [
-      "feature",
-      "tasks",
-      "frontend"
-    ],
-    "description": "Some issues recur weekly or monthly (like maintenance). Support recurring tasks with auto-generation. Ensure they don’t clutter the board and are distinguishable from normal issues."
-  },
-  {
-    "id": "39",
     "title": "Improve mobile responsiveness",
     "status": "Backlog",
     "priority": "medium",
     "severity": 2,
-    "createdAt": "2025-06-01T08:20:00Z",
-    "assignee": "carol",
+    "createdAt": "2025-09-10T12:10:00Z",
+    "assignee": "Miller",
     "tags": [
-      "mobile",
       "ui",
-      "ux"
-    ],
-    "description": "UI components are not rendering correctly on small screens. Audit the layout on common devices and adjust breakpoints, padding, and font sizes. Use browser dev tools to simulate devices."
+      "mobile",
+      "css"
+    ]
   },
   {
-    "id": "40",
-    "title": "Migrate database to PostgreSQL",
-    "status": "Backlog",
+    "id": "7",
+    "title": "Refactor legacy authentication module",
+    "status": "In Progress",
     "priority": "high",
     "severity": 3,
-    "createdAt": "2025-05-31T13:00:00Z",
-    "assignee": "dave",
+    "createdAt": "2025-09-11T10:00:00Z",
+    "assignee": "Lee",
     "tags": [
-      "database",
-      "migration",
-      "backend"
-    ],
-    "description": "We're outgrowing SQLite. Migrate to PostgreSQL for performance, scaling, and better query capabilities. Plan for schema migration, data consistency, and downtime minimization."
+      "auth",
+      "refactor",
+      "security"
+    ]
   },
   {
-    "id": "41",
-    "title": "Add 2FA support",
+    "id": "8",
+    "title": "Set up CI/CD pipeline",
     "status": "Backlog",
     "priority": "high",
     "severity": 3,
-    "createdAt": "2025-05-30T14:30:00Z",
-    "assignee": "eve",
+    "createdAt": "2025-09-12T13:40:00Z",
+    "assignee": "Green",
+    "tags": [
+      "devops",
+      "ci",
+      "cd"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Add password strength indicator",
+    "status": "Done",
+    "priority": "low",
+    "severity": 1,
+    "createdAt": "2025-09-13T15:25:00Z",
+    "assignee": "Patel",
+    "tags": [
+      "ui",
+      "auth",
+      "feature"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Fix timezone issue in scheduling",
+    "status": "In Progress",
+    "priority": "medium",
+    "severity": 3,
+    "createdAt": "2025-09-14T09:55:00Z",
+    "assignee": "Harris",
+    "tags": [
+      "bug",
+      "scheduling",
+      "timezone"
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Implement email notification system",
+    "status": "Backlog",
+    "priority": "high",
+    "severity": 3,
+    "createdAt": "2025-09-15T11:30:00Z",
+    "assignee": "Johnson",
+    "tags": [
+      "feature",
+      "email",
+      "notifications"
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Fix search indexing delay",
+    "status": "In Progress",
+    "priority": "medium",
+    "severity": 3,
+    "createdAt": "2025-09-16T09:20:00Z",
+    "assignee": "Smith",
+    "tags": [
+      "bug",
+      "search",
+      "performance"
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Redesign user profile page",
+    "status": "Done",
+    "priority": "medium",
+    "severity": 2,
+    "createdAt": "2025-09-17T14:00:00Z",
+    "assignee": "Brown",
+    "tags": [
+      "ui",
+      "profile",
+      "design"
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Add 2FA authentication",
+    "status": "Backlog",
+    "priority": "high",
+    "severity": 2,
+    "createdAt": "2025-09-18T08:50:00Z",
+    "assignee": "White",
     "tags": [
       "security",
       "auth",
       "feature"
-    ],
-    "description": "Add two-factor authentication (2FA) using authenticator apps. Users should be able to enable/disable it in settings. Include recovery codes and enforce 2FA for admins."
+    ]
   },
   {
-    "id": "42",
-    "title": "Fix broken image uploads",
+    "id": "15",
+    "title": "Fix pagination bug in reports",
     "status": "In Progress",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-29T11:15:00Z",
-    "assignee": "frank",
+    "priority": "low",
+    "severity": 2,
+    "createdAt": "2025-09-19T13:10:00Z",
+    "assignee": "Davis",
     "tags": [
       "bug",
-      "uploads",
-      "frontend"
-    ],
-    "description": "Some users report broken images after uploading to comments. Likely due to MIME type mismatch or CDN caching issues. Add validation and fallback for broken images."
+      "reports",
+      "ui"
+    ]
   },
   {
-    "id": "43",
-    "title": "Implement dark mode toggle",
+    "id": "16",
+    "title": "Upgrade to latest Node.js version",
+    "status": "Backlog",
+    "priority": "medium",
+    "severity": 3,
+    "createdAt": "2025-09-20T15:40:00Z",
+    "assignee": "Miller",
+    "tags": [
+      "devops",
+      "upgrade",
+      "nodejs"
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Fix broken image links in blog",
     "status": "Done",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-28T16:10:00Z",
-    "assignee": "alice",
-    "tags": [
-      "ui",
-      "theme",
-      "feature"
-    ],
-    "description": "Add a toggle in settings for light/dark mode. Store user preference in local storage and support system-default option via media queries. Ensure good contrast ratios."
-  },
-  {
-    "id": "44",
-    "title": "Add markdown support to comments",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-27T09:50:00Z",
-    "assignee": "bob",
-    "tags": [
-      "editor",
-      "markdown",
-      "feature"
-    ],
-    "description": "Allow users to format comments using markdown. Support headers, bold, italics, code blocks, and links. Sanitize input to prevent XSS vulnerabilities."
-  },
-  {
-    "id": "45",
-    "title": "Fix lag when loading large boards",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-26T10:30:00Z",
-    "assignee": "carol",
-    "tags": [
-      "performance",
-      "bug",
-      "frontend"
-    ],
-    "description": "Boards with many issues lag significantly on load. Investigate virtualized lists, batched rendering, and lazy loading. Aim to reduce time to interactivity by 50%."
-  },
-  {
-    "id": "46",
-    "title": "Add integration with Slack",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-25T12:20:00Z",
-    "assignee": "dave",
-    "tags": [
-      "integration",
-      "notifications",
-      "slack"
-    ],
-    "description": "Allow users to receive updates in Slack channels. Support per-project configuration and action buttons (e.g., close issue). Use Slack's Web API and slash commands."
-  },
-  {
-    "id": "47",
-    "title": "Audit accessibility (WCAG)",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-24T15:05:00Z",
-    "assignee": "eve",
-    "tags": [
-      "a11y",
-      "compliance",
-      "ux"
-    ],
-    "description": "Run a full accessibility audit based on WCAG 2.1. Fix missing labels, contrast issues, and keyboard traps. Add ARIA attributes where necessary and test with screen readers."
-  },
-  {
-    "id": "48",
-    "title": "Add undo for issue deletions",
-    "status": "Backlog",
     "priority": "low",
     "severity": 1,
-    "createdAt": "2025-05-23T11:00:00Z",
-    "assignee": "frank",
+    "createdAt": "2025-09-21T10:25:00Z",
+    "assignee": "Lee",
     "tags": [
-      "ux",
-      "feature",
-      "safety"
-    ],
-    "description": "Users sometimes delete issues by mistake. Add a snackbar with undo option for 10 seconds after deletion. Log deletions for admins to audit later if needed."
+      "bug",
+      "ui",
+      "blog"
+    ]
   },
   {
-    "id": "49",
-    "title": "Refactor notification service",
-    "status": "In Progress",
+    "id": "18",
+    "title": "Implement API rate limiting",
+    "status": "Backlog",
     "priority": "high",
+    "severity": 2,
+    "createdAt": "2025-09-22T09:15:00Z",
+    "assignee": "Green",
+    "tags": [
+      "api",
+      "security",
+      "performance"
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Add CSV export to analytics",
+    "status": "In Progress",
+    "priority": "medium",
     "severity": 3,
-    "createdAt": "2025-05-22T13:40:00Z",
-    "assignee": "alice",
+    "createdAt": "2025-09-23T16:45:00Z",
+    "assignee": "Patel",
+    "tags": [
+      "feature",
+      "export",
+      "analytics"
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Fix scroll locking on modals",
+    "status": "Backlog",
+    "priority": "low",
+    "severity": 2,
+    "createdAt": "2025-09-24T11:05:00Z",
+    "assignee": "Harris",
+    "tags": [
+      "bug",
+      "ui",
+      "modal"
+    ]
+  },
+  {
+    "id": "21",
+    "title": "Refactor form validation logic",
+    "status": "In Progress",
+    "priority": "medium",
+    "severity": 3,
+    "createdAt": "2025-09-25T09:55:00Z",
+    "assignee": "Johnson",
     "tags": [
       "refactor",
-      "notifications",
-      "backend"
-    ],
-    "description": "The notification system is tightly coupled to business logic. Decouple using event emitters or a queue (e.g., Redis). Improve reliability and testability."
+      "forms",
+      "validation"
+    ]
   },
   {
-    "id": "50",
-    "title": "Add activity logs for auditing",
+    "id": "22",
+    "title": "Fix memory leak in background jobs",
     "status": "Backlog",
-    "priority": "medium",
+    "priority": "high",
     "severity": 2,
-    "createdAt": "2025-05-21T14:55:00Z",
-    "assignee": "bob",
-    "tags": [
-      "audit",
-      "security",
-      "backend"
-    ],
-    "description": "Track user activity like logins, edits, and deletions. Store logs with timestamps and IP addresses. Make them visible to admins and exportable for audits."
-  },
-  {
-    "id": "51",
-    "title": "Optimize image compression",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-20T12:45:00Z",
-    "assignee": "carol",
-    "tags": [
-      "performance",
-      "media",
-      "frontend"
-    ],
-    "description": "Uploaded images are large and slow down page loads. Compress images client-side before upload using WebP. Add server-side optimization fallback."
-  },
-  {
-    "id": "52",
-    "title": "Add changelog modal",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-05-19T10:25:00Z",
-    "assignee": "dave",
-    "tags": [
-      "feature",
-      "changelog",
-      "ui"
-    ],
-    "description": "Let users know what’s new after updates via a changelog modal. Only show once per version. Pull data from a markdown file or CMS for flexibility."
-  },
-  {
-    "id": "53",
-    "title": "Fix infinite scroll bug in issues list",
-    "status": "Done",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-18T09:35:00Z",
-    "assignee": "eve",
+    "createdAt": "2025-09-26T14:15:00Z",
+    "assignee": "Smith",
     "tags": [
       "bug",
-      "scroll",
-      "frontend"
-    ],
-    "description": "Infinite scroll occasionally triggers duplicate fetches or fails to load new pages. Issue was due to race conditions in state updates. Debounced and stabilized triggers."
+      "jobs",
+      "performance"
+    ]
   },
   {
-    "id": "54",
-    "title": "Add quick create issue shortcut",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-05-17T08:10:00Z",
-    "assignee": "frank",
+    "id": "23",
+    "title": "Implement Slack integration",
+    "status": "Done",
+    "priority": "medium",
+    "severity": 3,
+    "createdAt": "2025-09-27T12:30:00Z",
+    "assignee": "Brown",
     "tags": [
-      "feature",
-      "shortcut",
-      "ux"
-    ],
-    "description": "Improve speed of creating issues by adding a keyboard shortcut (e.g., 'N') for quick issue entry. Autofocus title field and support basic fields inline."
-  },
-  {
-    "id": "55",
-    "title": "Create onboarding checklist",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-05-16T14:20:00Z",
-    "assignee": "alice",
-    "tags": [
-      "onboarding",
-      "ux",
+      "integration",
+      "slack",
       "feature"
-    ],
-    "description": "New users struggle to get started. Add a checklist with tasks like 'Create first issue' or 'Invite teammate'. Include progress tracking and dismiss option."
+    ]
   },
   {
-    "id": "56",
-    "title": "Enable keyboard navigation for modals",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-15T10:10:00Z",
-    "assignee": "bob",
-    "tags": [
-      "a11y",
-      "keyboard",
-      "ux"
-    ],
-    "description": "Modals currently trap focus improperly. Ensure escape key closes modals and tab/shift-tab navigates inputs correctly. Add tests for focus management."
-  },
-  {
-    "id": "57",
-    "title": "Fix broken pagination in reports",
-    "status": "Done",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-14T09:30:00Z",
-    "assignee": "carol",
-    "tags": [
-      "bug",
-      "pagination",
-      "reports"
-    ],
-    "description": "Reports page displays duplicate entries on page 2+. Issue traced to incorrect page offset in query parameters. Patched backend and added e2e test."
-  },
-  {
-    "id": "58",
-    "title": "Add support for emoji reactions",
+    "id": "24",
+    "title": "Fix alignment in footer",
     "status": "Backlog",
     "priority": "low",
     "severity": 1,
-    "createdAt": "2025-05-13T08:45:00Z",
-    "assignee": "dave",
+    "createdAt": "2025-09-28T17:00:00Z",
+    "assignee": "White",
     "tags": [
-      "feature",
-      "emoji",
-      "comments"
-    ],
-    "description": "Users want to react to comments with emojis. Add common reactions (👍 ❤️ 🎉 etc.). Store per user and allow toggling reactions. Avoid overwhelming UI."
-  },
-  {
-    "id": "59",
-    "title": "Implement autoscaling for backend",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-12T11:00:00Z",
-    "assignee": "eve",
-    "tags": [
-      "infrastructure",
-      "scaling",
-      "backend"
-    ],
-    "description": "Backend can't handle peak loads. Configure autoscaling on cloud provider (Kubernetes or ECS). Monitor metrics and set resource limits and thresholds."
-  },
-  {
-    "id": "60",
-    "title": "Improve error messages for failed logins",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-11T16:15:00Z",
-    "assignee": "frank",
-    "tags": [
-      "auth",
-      "ux",
-      "feedback"
-    ],
-    "description": "Generic 'login failed' message isn’t helpful. Display specific reasons (e.g., wrong password, account locked). Avoid exposing too much for security reasons."
-  },
-  {
-    "id": "61",
-    "title": "Fix layout breaking on Safari",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-10T13:50:00Z",
-    "assignee": "alice",
-    "tags": [
-      "bug",
-      "cross-browser",
-      "frontend"
-    ],
-    "description": "Some CSS grid layouts break on Safari 15+. Investigate -webkit-prefix issues or unsupported features. Add browser compatibility testing to CI."
-  },
-  {
-    "id": "62",
-    "title": "Add status history tracking",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-09T12:30:00Z",
-    "assignee": "bob",
-    "tags": [
-      "feature",
-      "history",
-      "audit"
-    ],
-    "description": "Track status changes over time (e.g., from Backlog → In Progress → Done). Display a timeline per issue. Store who made the change and when."
-  },
-  {
-    "id": "63",
-    "title": "Allow issue dependencies",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-08T10:40:00Z",
-    "assignee": "carol",
-    "tags": [
-      "feature",
-      "relationships",
-      "productivity"
-    ],
-    "description": "Allow marking issues as blocking or dependent on others. Show visual indicators and prevent starting blocked issues until dependencies are resolved."
-  },
-  {
-    "id": "64",
-    "title": "Update footer with new links",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-05-07T14:10:00Z",
-    "assignee": "dave",
-    "tags": [
-      "content",
       "ui",
+      "bug",
       "footer"
-    ],
-    "description": "Update footer to include Privacy Policy, Careers, and Blog. Ensure links open in a new tab and follow accessibility guidelines."
+    ]
   },
   {
-    "id": "65",
-    "title": "Support right-to-left (RTL) languages",
+    "id": "25",
+    "title": "Add bulk user import feature",
+    "status": "In Progress",
+    "priority": "high",
+    "severity": 3,
+    "createdAt": "2025-09-29T09:40:00Z",
+    "assignee": "Davis",
+    "tags": [
+      "feature",
+      "users",
+      "import"
+    ]
+  },
+  {
+    "id": "26",
+    "title": "Update password hashing algorithm",
+    "status": "Backlog",
+    "priority": "high",
+    "severity": 2,
+    "createdAt": "2025-09-30T15:25:00Z",
+    "assignee": "Miller",
+    "tags": [
+      "security",
+      "auth",
+      "passwords"
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Fix dropdown flicker in navigation",
+    "status": "Done",
+    "priority": "low",
+    "severity": 2,
+    "createdAt": "2025-10-01T10:15:00Z",
+    "assignee": "Lee",
+    "tags": [
+      "ui",
+      "bug",
+      "dropdown"
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Add custom roles support",
+    "status": "In Progress",
+    "priority": "high",
+    "severity": 3,
+    "createdAt": "2025-10-02T13:55:00Z",
+    "assignee": "Green",
+    "tags": [
+      "roles",
+      "auth",
+      "feature"
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Fix slow loading on analytics dashboard",
     "status": "Backlog",
     "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-06T15:55:00Z",
-    "assignee": "eve",
+    "severity": 3,
+    "createdAt": "2025-10-03T12:20:00Z",
+    "assignee": "Patel",
+    "tags": [
+      "bug",
+      "performance",
+      "analytics"
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Add support for multi-language UI",
+    "status": "Backlog",
+    "priority": "high",
+    "severity": 3,
+    "createdAt": "2025-10-04T16:35:00Z",
+    "assignee": "Harris",
     "tags": [
       "i18n",
-      "rtl",
-      "ux"
-    ],
-    "description": "The app should support RTL languages like Arabic and Hebrew. Update stylesheets, icons, and layouts. Allow toggling direction based on locale."
-  },
-  {
-    "id": "66",
-    "title": "Add AI-assisted issue summaries",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-05T09:00:00Z",
-    "assignee": "frank",
-    "tags": [
-      "ai",
-      "feature",
-      "summary"
-    ],
-    "description": "Generate brief summaries for long issue descriptions using NLP. Display below the full text. Allow users to edit or regenerate manually."
-  },
-  {
-    "id": "67",
-    "title": "Fix mobile navbar toggle",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-05-04T12:05:00Z",
-    "assignee": "alice",
-    "tags": [
-      "bug",
-      "mobile",
-      "navigation"
-    ],
-    "description": "Navbar toggle button doesn't respond on small screens in some views. Likely JavaScript event conflict. Fix and add mobile test coverage."
-  },
-  {
-    "id": "68",
-    "title": "Optimize search indexing",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-03T10:25:00Z",
-    "assignee": "bob",
-    "tags": [
-      "search",
-      "performance",
-      "backend"
-    ],
-    "description": "Search indexing is slow for large workspaces. Use background jobs and incremental indexing. Consider moving to a full-text search engine like MeiliSearch."
-  },
-  {
-    "id": "69",
-    "title": "Add print-friendly view",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-05-02T11:15:00Z",
-    "assignee": "carol",
-    "tags": [
-      "print",
-      "feature",
-      "ux"
-    ],
-    "description": "Users want to print issue details for meetings. Add print stylesheet with minimal layout, no sidebars, and clean typography."
-  },
-  {
-    "id": "70",
-    "title": "Implement webhooks for issue events",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-05-01T13:00:00Z",
-    "assignee": "dave",
-    "tags": [
-      "api",
-      "webhooks",
-      "integration"
-    ],
-    "description": "Allow users to register webhooks that fire on issue create, update, delete events. Provide logs and retry on failure. Secure with secret tokens."
-  },
-  {
-    "id": "71",
-    "title": "Improve password reset UX",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-30T09:35:00Z",
-    "assignee": "eve",
-    "tags": [
-      "auth",
-      "ux",
-      "email"
-    ],
-    "description": "Reset flow is confusing. Add clearer success/error messages, ensure links expire securely, and auto-focus password fields on reset page."
-  },
-  {
-    "id": "72",
-    "title": "Add user presence indicators",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-29T08:25:00Z",
-    "assignee": "frank",
-    "tags": [
-      "feature",
-      "presence",
-      "realtime"
-    ],
-    "description": "Show when teammates are online or viewing an issue. Use WebSocket presence channels. Allow disabling presence visibility in user settings."
-  },
-  {
-    "id": "73",
-    "title": "Support SAML SSO",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-28T10:50:00Z",
-    "assignee": "alice",
-    "tags": [
-      "auth",
-      "saml",
-      "enterprise"
-    ],
-    "description": "Add SAML-based SSO for enterprise clients. Support metadata exchange and automatic user provisioning. Provide setup docs and support for multiple identity providers."
-  },
-  {
-    "id": "74",
-    "title": "Fix dropdown clipping inside modals",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-27T14:20:00Z",
-    "assignee": "bob",
-    "tags": [
-      "bug",
       "ui",
-      "z-index"
-    ],
-    "description": "Dropdown menus get clipped inside modals due to overflow styles. Adjust stacking context or use portal-based rendering to avoid layout issues."
-  },
-  {
-    "id": "75",
-    "title": "Enable commenting on closed issues",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-26T11:10:00Z",
-    "assignee": "carol",
-    "tags": [
-      "comments",
-      "permissions",
-      "ux"
-    ],
-    "description": "Users sometimes need to add context after an issue is closed. Allow comments but highlight that the issue is closed. Optionally reopen on comment."
-  },
-  {
-    "id": "76",
-    "title": "Export activity logs to CSV",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-25T09:55:00Z",
-    "assignee": "dave",
-    "tags": [
-      "audit",
-      "export",
       "feature"
-    ],
-    "description": "Allow admins to export user activity logs in CSV format. Include timestamp, user ID, action, and affected resource. Paginate for large exports."
-  },
-  {
-    "id": "77",
-    "title": "Add voice command support",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-24T12:00:00Z",
-    "assignee": "eve",
-    "tags": [
-      "voice",
-      "experimental",
-      "accessibility"
-    ],
-    "description": "Explore voice commands for common actions like creating or closing issues. Use Web Speech API and provide onboarding tips. Mark as beta feature."
-  },
-  {
-    "id": "78",
-    "title": "Add data usage metrics for admins",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-23T15:25:00Z",
-    "assignee": "frank",
-    "tags": [
-      "admin",
-      "metrics",
-      "backend"
-    ],
-    "description": "Display data usage (e.g., storage, number of issues, users) on the admin dashboard. Help admins monitor usage limits and plan upgrades."
-  },
-  {
-    "id": "79",
-    "title": "Fix broken tooltips on disabled buttons",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-22T13:40:00Z",
-    "assignee": "alice",
-    "tags": [
-      "bug",
-      "tooltip",
-      "ux"
-    ],
-    "description": "Tooltips don't appear on disabled buttons in some browsers. Workaround by wrapping buttons in a span and moving tooltip trigger to parent."
-  },
-  {
-    "id": "80",
-    "title": "Add admin impersonation mode",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-21T09:20:00Z",
-    "assignee": "bob",
-    "tags": [
-      "admin",
-      "security",
-      "feature"
-    ],
-    "description": "Admins should be able to impersonate users for support and debugging. Log all impersonation activity and require justification for each session."
-  },
-  {
-    "id": "81",
-    "title": "Enable issue templates",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-20T11:45:00Z",
-    "assignee": "carol",
-    "tags": [
-      "feature",
-      "templates",
-      "workflow"
-    ],
-    "description": "Let users create and reuse issue templates for common tasks. Support fields, checklists, and auto-tagging. Allow workspace-wide templates."
-  },
-  {
-    "id": "82",
-    "title": "Fix flicker on theme change",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-19T10:10:00Z",
-    "assignee": "dave",
-    "tags": [
-      "bug",
-      "theme",
-      "frontend"
-    ],
-    "description": "Switching between light/dark themes causes a flash of unstyled content. Delay rendering until theme loads or store in local storage early."
-  },
-  {
-    "id": "83",
-    "title": "Add support for WebAuthn login",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-18T08:40:00Z",
-    "assignee": "eve",
-    "tags": [
-      "security",
-      "auth",
-      "feature"
-    ],
-    "description": "Allow users to log in with WebAuthn devices (e.g., fingerprint or YubiKey). Improve security and reduce reliance on passwords."
-  },
-  {
-    "id": "84",
-    "title": "Improve CI build time",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-17T07:30:00Z",
-    "assignee": "frank",
-    "tags": [
-      "ci",
-      "performance",
-      "devops"
-    ],
-    "description": "CI builds take over 10 minutes. Optimize dependencies, cache layers, and parallelize tests. Aim for sub-5-minute feedback loops."
-  },
-  {
-    "id": "85",
-    "title": "Add dark mode toggle in header",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-16T11:00:00Z",
-    "assignee": "alice",
-    "tags": [
-      "ui",
-      "theme",
-      "frontend"
-    ],
-    "description": "Users want quicker access to switch between light and dark themes. Add a toggle in the header with instant visual feedback."
-  },
-  {
-    "id": "86",
-    "title": "Fix notification badge not clearing",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-15T09:30:00Z",
-    "assignee": "bob",
-    "tags": [
-      "bug",
-      "notifications",
-      "frontend"
-    ],
-    "description": "Even after reading notifications, the badge count remains. Investigate cache state and ensure client updates in real-time."
-  },
-  {
-    "id": "87",
-    "title": "Support markdown in comments",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-14T13:15:00Z",
-    "assignee": "carol",
-    "tags": [
-      "markdown",
-      "comments",
-      "editor"
-    ],
-    "description": "Allow users to format comments using markdown (bold, lists, code blocks). Sanitize input to prevent XSS. Show preview toggle."
-  },
-  {
-    "id": "88",
-    "title": "Add workload heatmap for assignees",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-13T10:20:00Z",
-    "assignee": "dave",
-    "tags": [
-      "analytics",
-      "dashboard",
-      "ux"
-    ],
-    "description": "Visualize issue load by assignee in a heatmap. Help PMs balance assignments. Support filtering by time and project."
-  },
-  {
-    "id": "89",
-    "title": "Fix broken file preview for PDFs",
-    "status": "Done",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-12T14:50:00Z",
-    "assignee": "eve",
-    "tags": [
-      "bug",
-      "files",
-      "preview"
-    ],
-    "description": "PDF attachments open as blank. Switch to a more reliable PDF.js viewer and handle corrupt file errors gracefully."
-  },
-  {
-    "id": "90",
-    "title": "Add custom webhooks for status changes",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-11T12:00:00Z",
-    "assignee": "frank",
-    "tags": [
-      "webhooks",
-      "api",
-      "automation"
-    ],
-    "description": "Allow users to configure webhooks triggered on issue status changes. Provide payload schema and retry mechanism."
-  },
-  {
-    "id": "91",
-    "title": "Implement two-factor authentication (2FA)",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-10T09:10:00Z",
-    "assignee": "alice",
-    "tags": [
-      "auth",
-      "security",
-      "feature"
-    ],
-    "description": "Enhance login security with TOTP-based 2FA. Provide recovery codes and enforce for admin accounts."
-  },
-  {
-    "id": "92",
-    "title": "Fix flaky integration tests",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-09T10:45:00Z",
-    "assignee": "bob",
-    "tags": [
-      "tests",
-      "ci",
-      "flaky"
-    ],
-    "description": "Random test failures slow development. Identify race conditions or environment-specific issues. Stabilize CI pipeline."
-  },
-  {
-    "id": "93",
-    "title": "Add checklist templates to issues",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-08T15:20:00Z",
-    "assignee": "carol",
-    "tags": [
-      "feature",
-      "checklist",
-      "productivity"
-    ],
-    "description": "Allow users to insert pre-defined checklists into issues. Useful for QA, onboarding, or bug reports. Save templates per workspace."
-  },
-  {
-    "id": "94",
-    "title": "Fix cursor jumping in comment editor",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-07T13:35:00Z",
-    "assignee": "dave",
-    "tags": [
-      "bug",
-      "editor",
-      "ux"
-    ],
-    "description": "Typing in the comment box causes the cursor to jump randomly. Investigate uncontrolled component state updates."
-  },
-  {
-    "id": "95",
-    "title": "Support grouped notifications",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-06T11:00:00Z",
-    "assignee": "eve",
-    "tags": [
-      "notifications",
-      "feature",
-      "ux"
-    ],
-    "description": "Bundle multiple notifications into groups by issue or project. Reduce noise and improve readability."
-  },
-  {
-    "id": "96",
-    "title": "Add support for mentions in comments",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-05T14:30:00Z",
-    "assignee": "frank",
-    "tags": [
-      "feature",
-      "mentions",
-      "comments"
-    ],
-    "description": "Enable @mentions to notify teammates in comments. Support autocomplete and links to user profiles."
-  },
-  {
-    "id": "97",
-    "title": "Optimize initial load time",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-04T10:25:00Z",
-    "assignee": "alice",
-    "tags": [
-      "performance",
-      "frontend",
-      "metrics"
-    ],
-    "description": "App takes too long to load. Implement lazy loading, reduce bundle size, and cache critical assets."
-  },
-  {
-    "id": "98",
-    "title": "Fix incorrect date formatting in emails",
-    "status": "Done",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-04-03T09:40:00Z",
-    "assignee": "bob",
-    "tags": [
-      "bug",
-      "email",
-      "localization"
-    ],
-    "description": "Emails use US date format for all users. Localize date formatting based on user settings."
-  },
-  {
-    "id": "99",
-    "title": "Add GDPR data export tool",
-    "status": "Backlog",
-    "priority": "high",
-    "severity": 3,
-    "createdAt": "2025-04-02T08:00:00Z",
-    "assignee": "carol",
-    "tags": [
-      "compliance",
-      "feature",
-      "security"
-    ],
-    "description": "Provide a self-service option for users to download all personal data stored on the platform, as required by GDPR."
-  },
-  {
-    "id": "100",
-    "title": "Improve scrolling performance in issue list",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-04-01T13:10:00Z",
-    "assignee": "dave",
-    "tags": [
-      "performance",
-      "frontend",
-      "scrolling"
-    ],
-    "description": "Issue list becomes sluggish with large datasets. Consider virtualization or pagination strategies."
-  },
-  {
-    "id": "101",
-    "title": "Support file uploads via drag-and-drop",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-03-31T12:20:00Z",
-    "assignee": "eve",
-    "tags": [
-      "feature",
-      "uploads",
-      "ux"
-    ],
-    "description": "Allow users to drag and drop files into the issue composer or comment box. Preview uploaded files before submitting."
-  },
-  {
-    "id": "102",
-    "title": "Fix tooltip positioning in RTL mode",
-    "status": "Backlog",
-    "priority": "low",
-    "severity": 1,
-    "createdAt": "2025-03-30T09:55:00Z",
-    "assignee": "frank",
-    "tags": [
-      "bug",
-      "rtl",
-      "ui"
-    ],
-    "description": "Tooltips are misaligned in RTL layouts. Adjust anchor logic based on text direction."
-  },
-  {
-    "id": "103",
-    "title": "Add ability to follow issues",
-    "status": "Backlog",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-03-29T11:45:00Z",
-    "assignee": "alice",
-    "tags": [
-      "feature",
-      "notifications",
-      "ux"
-    ],
-    "description": "Let users follow issues they care about to receive updates even if not assigned or mentioned."
-  },
-  {
-    "id": "104",
-    "title": "Implement keyboard shortcuts",
-    "status": "In Progress",
-    "priority": "medium",
-    "severity": 2,
-    "createdAt": "2025-03-28T10:10:00Z",
-    "assignee": "bob",
-    "tags": [
-      "ux",
-      "keyboard",
-      "accessibility"
-    ],
-    "description": "Add keyboard shortcuts for common actions like creating issues, navigating tabs, and assigning users. Show shortcuts menu."
+    ]
   }
 ]

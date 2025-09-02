@@ -1,0 +1,34 @@
+.issue-detail-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+    min-height: 100vh;
+}
+
+.issue-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+}
+
+.issue-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.issue-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .issue-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .issue-detail-page {
+        padding: 16px;
+    }
+}

@@ -1,49 +1,38 @@
-import React, {useState} from "react";
-import {closestCenter, DndContext, DragEndEvent} from "@dnd-kit/core";
+import React from "react";
+import {closestCenter, DndContext} from "@dnd-kit/core";
 import {Column} from "./Column";
 import {IssueModel} from "../../domain/models/Issue.model";
-import "./board.css"
+import {IssueStatus} from "../../types";
+import "./board.css";
+import {useBoardState} from "./hooks/useBoardState";
+import {useBoardDrag} from "./hooks/useBoardDrag";
+import {useBoardScroll} from "./hooks/useBoardScroll";
 
 interface BoardProps {
     issues: IssueModel[];
-    statuses: string[];
+    statuses: IssueStatus[];
+    onIssueMove?: (issue: IssueModel, toStatus: IssueStatus) => void;
+    loading?: boolean;
 }
 
-export const Board: React.FC<BoardProps> = ({issues, statuses}) => {
-    const [boardData, setBoardData] = useState<Record<string, IssueModel[]>>(() => {
-        const grouped: Record<string, IssueModel[]> = {};
-        statuses.forEach(status => grouped[status] = issues.filter(i => i.status === status));
-        return grouped;
-    });
+export const Board = (props: BoardProps) => {
+    const {issues, statuses, onIssueMove, loading} = props;
+    const {boardData, moveIssue: originalMoveIssue} = useBoardState(issues, statuses, onIssueMove);
+    const {setColumnRef, scrollToCard} = useBoardScroll();
 
-    const handleDragEnd = (event: DragEndEvent) => {
-        const {active, over} = event;
-
-        const activeData = active.data?.current;
-        const overData = over?.data?.current;
-
-        if (!activeData || !overData) return;
-
-        const sourceStatus = activeData.status;
-        const targetStatus = overData.status;
-
-        if (sourceStatus === targetStatus) return;
-
-        const movingIssue = boardData[sourceStatus].find(i => i.id === active.id);
-        if (!movingIssue) return;
-
-        setBoardData(prev => ({
-            ...prev,
-            [sourceStatus]: prev[sourceStatus].filter(i => i.id !== active.id),
-            [targetStatus]: [...prev[targetStatus], {...movingIssue, status: targetStatus}],
-        }));
+    const moveIssue = (id: string, from: IssueStatus, to: IssueStatus) => {
+        originalMoveIssue(id, from, to);
+        scrollToCard(to, id, {block: "nearest", behavior: "smooth", attempts: 3});
     };
+
+    const {handleDragEnd} = useBoardDrag(moveIssue);
 
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <div className='board'>
-                {statuses.map(status => (
-                    <Column key={status} status={status} issues={boardData[status]}/>
+            <div className="board">
+                {statuses.map((status) => (
+                    <Column key={status} status={status} issues={boardData[status]} loading={loading}
+                            innerRef={setColumnRef(status)}/>
                 ))}
             </div>
         </DndContext>

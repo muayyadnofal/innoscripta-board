@@ -5,6 +5,16 @@
 }
 
 :root {
+    --gap: 16px;
+    --radius: 8px;
+
+    --color-card: #fff;
+    --color-accent: #2563eb;
+
+    --priority-low: #22c55e;
+    --priority-medium: #facc15;
+    --priority-high: #ef4444;
+
     --main: #000;
 
     --primary: #2A4E63;

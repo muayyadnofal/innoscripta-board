@@ -1,0 +1,26 @@
+.tag {
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    display: inline-block;
+}
+
+.tag--default {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.tag--info {
+    background: #2563eb;
+    color: white;
+}
+
+.tag--warning {
+    background: #facc15;
+    color: black;
+}
+
+.tag--success {
+    background: #22c55e;
+    color: white;
+}

@@ -1,21 +1,19 @@
-:root {
-    --gap: 16px;
-}
-
 .board {
     display: flex;
     gap: var(--gap);
     padding: var(--gap);
+    background-color: var(--background);
+    border-radius: var(--radius);
 }
 
 .column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--muted);
+    background-color: var(--color-card);
     box-shadow: var(--shadow-base);
     padding: var(--gap);
-    border-radius: 8px;
+    border-radius: var(--radius);
     min-height: 80vh;
 }
 
@@ -24,26 +22,13 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 100%;
     font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--main);
 }
 
 .column__list {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-}
-
-.card {
-    background-color: var(--primary);
-    color: var(--muted);
-    box-shadow: var(--shadow-base);
-    padding: 12px;
-    border-radius: 6px;
-    cursor: grab;
-}
-
-
-.card__title {
-    font-weight: 500;
 }

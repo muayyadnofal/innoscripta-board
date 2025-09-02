@@ -7,7 +7,6 @@ interface UseSelectableAvatarsProps extends Pick<AvatarGroupProps, "value" | "de
 export const useSelectableAvatars = (props: UseSelectableAvatarsProps) => {
     const {value, defaultValue = [], onSelectChange} = props;
     const [internal, setInternal] = useState<string[]>(defaultValue);
-    console.log(value)
     const selected = value ?? internal;
 
     const updateSelection = (next: string[]) => {

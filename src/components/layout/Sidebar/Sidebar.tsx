@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import "./sidebar.css";
+import {ReactNode} from "react";
 
-type SidebarProps = {
-    items: { label: string; icon?: React.ReactNode; path: string }[];
+export type SidebarProps = {
+    items: { label: string; icon?: ReactNode; path: string }[];
 };
 
 export const Sidebar = ({items}: SidebarProps) => {

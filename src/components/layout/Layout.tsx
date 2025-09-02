@@ -1,15 +1,12 @@
 import {Outlet} from "react-router-dom";
 import {Navigation} from "./Navigation/Navigation";
-import {Sidebar} from "./Sidebar/Sidebar";
+import {Sidebar, SidebarProps} from "./Sidebar/Sidebar";
 import "./layout.css";
 import {SearchIcon} from "../icons";
 import {SearchInput} from "../ui/Search/Search";
 
 export const Layout = () => {
-    const sidebarItems = [
-        {label: "Home", path: "/"},
-        {label: "Profile", path: "/profile"},
-    ];
+    const sidebarItems: SidebarProps['items'] = [];
 
     return (
         <div className="layout">

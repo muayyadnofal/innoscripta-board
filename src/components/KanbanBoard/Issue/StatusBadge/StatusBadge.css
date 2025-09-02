@@ -1,0 +1,22 @@
+.status-badge {
+    padding: 4px 8px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge--backlog {
+    background-color: var(--muted);
+    color: var(--main);
+}
+
+.status-badge--in-progress {
+    background-color: var(--priority-medium);
+    color: #000;
+}
+
+.status-badge--done {
+    background-color: var(--priority-low);
+    color: #fff;
+}

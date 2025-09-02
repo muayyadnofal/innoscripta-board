@@ -1,0 +1,131 @@
+.last-updated-indicator {
+    display: inline-flex;
+    align-items: center;
+    color: var(--main);
+    transition: all 0.3s ease;
+}
+
+.last-updated-indicator__content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.last-updated-indicator__label {
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.last-updated-indicator__time {
+    font-weight: 600;
+    color: var(--main);
+}
+
+.last-updated-indicator--sm {
+    font-size: 0.75rem;
+}
+
+.last-updated-indicator--md {
+    font-size: 0.875rem;
+}
+
+.last-updated-indicator--lg {
+    font-size: 1rem;
+}
+
+.last-updated-indicator--minimal .last-updated-indicator__label {
+    display: none;
+}
+
+.last-updated-indicator--detailed {
+    background: var(--background);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--muted);
+    box-shadow: var(--shadow-base);
+}
+
+.last-updated-indicator--detailed .last-updated-indicator__time {
+    color: var(--main);
+}
+
+.last-updated-indicator__pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    animation: lastUpdatedPulse 1.5s infinite;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+}
+
+.last-updated-indicator__status {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-left: 0.5rem;
+}
+
+.last-updated-indicator__status-text {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.last-updated-indicator__spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--muted);
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: lastUpdatedSpin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+.last-updated-indicator--live {
+    animation: lastUpdatedHighlight 2s ease-in-out;
+}
+
+@keyframes lastUpdatedPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba(0, 123, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+@keyframes lastUpdatedSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes lastUpdatedHighlight {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 768px) {
+    .last-updated-indicator--detailed {
+        padding: 0.375rem 0.75rem;
+    }
+
+    .last-updated-indicator__content {
+        gap: 0.375rem;
+    }
+}

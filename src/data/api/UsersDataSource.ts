@@ -10,7 +10,6 @@ export class UserDataSource extends JsonServiceArray<UserEntity> {
 
     async getAllUsers(): Promise<UserModel[]> {
         const response = await this.getAll<UserModel>();
-        console.log(response);
         return usersMapper(response)
     }
 }

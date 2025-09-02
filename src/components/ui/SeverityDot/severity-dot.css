@@ -1,0 +1,27 @@
+.severity {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--main);
+}
+
+.severity-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.severity-dot--1 {
+    background-color: #22c55e;
+}
+
+.severity-dot--2 {
+    background-color: #facc15;
+}
+
+.severity-dot--3 {
+    background-color: #ef4444;
+}
+

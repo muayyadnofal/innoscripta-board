@@ -12,7 +12,6 @@ export const AssigneeFilter = (props: AssigneeFilterProps) => {
     const selectedFromUrl = getAll(paramKey);
 
     const {data: users} = useGetAllUsers();
-    console.log(users);
 
     return (
         <AvatarGroup size="sm" selectable value={selectedFromUrl}

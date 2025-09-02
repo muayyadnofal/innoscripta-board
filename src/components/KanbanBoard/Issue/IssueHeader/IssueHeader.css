@@ -1,0 +1,26 @@
+.issue-header {
+    margin-bottom: 32px;
+}
+
+.issue-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 16px 0;
+    color: var(--main);
+}
+
+.issue-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.issue-id {
+    color: var(--main);
+    font-weight: 500;
+}
+
+.back-button {
+    margin-bottom: 16px;
+}

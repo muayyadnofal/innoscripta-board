@@ -1,0 +1,96 @@
+.card {
+    background-color: var(--color-card);
+    box-shadow: var(--shadow-base);
+    border-radius: calc(var(--radius) - 2px);
+    padding: 12px;
+    cursor: grab;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card--dragging {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__title {
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card__title:hover {
+    text-decoration: underline;
+}
+
+.card__meta {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: var(--main);
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__tags {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.card__footer {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+
+.card--skeleton {
+    background-color: #e5e7eb;
+    cursor: default;
+    pointer-events: none;
+}
+
+.skeleton {
+    background-color: #d1d5db;
+    border-radius: 4px;
+    margin: 6px 0;
+}
+
+.card__header.skeleton {
+    height: 16px;
+}
+
+.card__meta.skeleton {
+    height: 12px;
+}
+
+.card__tags.skeleton {
+    height: 10px;
+}
+
+.card__footer.skeleton {
+    height: 14px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #d1d5db 25%, #e5e7eb 50%, #d1d5db 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
