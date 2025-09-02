@@ -49,6 +49,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchProps>(
 
         return (
             <Dropdown
+
                 trigger={
                     <Input ref={ref} value={value}
                            onChange={(e) => {

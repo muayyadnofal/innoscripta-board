@@ -44,6 +44,7 @@ export const IssueDetailPage = () => {
                         issueId={issue.id}
                         currentStatus={issue.status}
                         onStatusUpdate={handleStatusUpdate}
+                        onUndo={handleStatusUpdate}
                     />
                 </div>
             </div>

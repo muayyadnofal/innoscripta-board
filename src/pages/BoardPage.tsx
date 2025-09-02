@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {FilterPanel} from "../components/Filters/FilterPanel";
 import {Board} from "../components/KanbanBoard/Board";
 import {useGetAllIssues} from "../domain/useCases/useGetAllIssues";
@@ -13,10 +13,6 @@ export const BoardPage = () => {
     const {data: issues, isLoading, isFetching, lastUpdated} = useGetAllIssues();
     const {updateIssue} = useUpdateIssue();
     const showLoadingSkeletons = isLoading && (!issues || issues.length === 0);
-
-    useEffect(() => {
-        console.log(issues)
-    }, [issues])
 
     const handleIssueMove = async (issue: IssueModel, toStatus: IssueStatus) => {
         await updateIssue(issue.id, {status: toStatus});

@@ -4,7 +4,7 @@
 
 .activity-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     padding: 16px;
     background-color: var(--color-card);
@@ -18,5 +18,5 @@
 
 .activity-time {
     font-size: 12px;
-    color: var(--muted);
+    color: var(--main);
 }

@@ -1,5 +1,5 @@
 import {Button} from "../../ui/Button";
-import {SettingsIcon, SwitchIcon} from "../../icons";
+import {SwitchIcon} from "../../icons";
 import "./navigation.css"
 
 export const Navigation = () => {
@@ -11,7 +11,6 @@ export const Navigation = () => {
             </div>
             <div className="navigation__actions">
                 <Button icon={<SwitchIcon/>} variant="text"/>
-                <Button icon={<SettingsIcon/>} variant="text"/>
             </div>
         </nav>
     )

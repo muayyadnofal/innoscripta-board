@@ -17,6 +17,10 @@
     margin: 0;
 }
 
+.sidebar__item {
+    width: 100%;
+}
+
 .sidebar__link {
     display: flex;
     align-items: center;
@@ -25,16 +29,42 @@
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
     color: var(--main);
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .sidebar__link:hover {
     background-color: var(--primary);
     filter: brightness(0.95);
-    color: var(--muted);
-
+    color: var(--main);
 }
 
 .sidebar__icon {
     display: inline-flex;
+}
+
+.sidebar__recent-title {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--main);
+    text-transform: uppercase;
+}
+
+.sidebar__recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar__recent-item {
+    width: 100%;
+}
+
+.sidebar__recent-item .card {
+    font-size: 0.9rem;
+    padding: 0.5rem;
 }

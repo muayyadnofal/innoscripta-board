@@ -8,10 +8,11 @@ interface ActionsSectionProps {
     issueId: string;
     currentStatus: IssueStatus;
     onStatusUpdate?: () => void;
+    onUndo?: () => void;
 }
 
-export const ActionsSection: React.FC<ActionsSectionProps> = ({issueId, currentStatus, onStatusUpdate}) => {
-    const {updateIssue, isLoading} = useUpdateIssue();
+export const ActionsSection: React.FC<ActionsSectionProps> = ({issueId, currentStatus, onStatusUpdate, onUndo}) => {
+    const {updateIssue, isLoading} = useUpdateIssue(onUndo);
 
     const handleMarkAsResolved = async () => {
         try {

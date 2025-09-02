@@ -5,9 +5,9 @@ import {toast} from "react-toastify";
 import {UndoToast} from "../../components/UndoToast/UndoToast";
 import {IssueModel} from "../models/Issue.model";
 
-export function useUpdateIssue() {
+export function useUpdateIssue(onUndo?: () => void) {
     const {cache, updateCache} = useCache();
-    const cacheKey = "issues";
+    const cacheKey = 'issues'
 
     const mutation = useMutation(
         async ({id, updates}: { id: string; updates: Partial<IssueEntity> }) =>
@@ -31,7 +31,6 @@ export function useUpdateIssue() {
 
     const updateIssue = async (id: string, updates: Partial<IssueEntity>) => {
         const currentData = getCurrentData();
-        console.log('currentData', currentData);
         let previousData: IssueEntity[] = []
         if (currentData) {
             previousData = transformAssignee(currentData);
@@ -57,6 +56,7 @@ export function useUpdateIssue() {
                                 id,
                                 updates: {...issueToUpdate, assignee: issueToUpdate?.assignee.name},
                             });
+                            onUndo && onUndo();
                             closeToast?.();
                         }}
                     />
