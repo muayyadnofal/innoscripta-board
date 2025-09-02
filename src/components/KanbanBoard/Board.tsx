@@ -7,6 +7,7 @@ import "./board.css";
 import {useBoardState} from "./hooks/useBoardState";
 import {useBoardDrag} from "./hooks/useBoardDrag";
 import {useBoardScroll} from "./hooks/useBoardScroll";
+import {useCan} from "../../Permissions/useCan";
 
 interface BoardProps {
     issues: IssueModel[];
@@ -17,10 +18,12 @@ interface BoardProps {
 
 export const Board = (props: BoardProps) => {
     const {issues, statuses, onIssueMove, loading} = props;
+    const {can} = useCan();
     const {boardData, moveIssue: originalMoveIssue} = useBoardState(issues, statuses, onIssueMove);
     const {setColumnRef, scrollToCard} = useBoardScroll();
 
     const moveIssue = (id: string, from: IssueStatus, to: IssueStatus) => {
+        if (!can("move_issue")) return;
         originalMoveIssue(id, from, to);
         scrollToCard(to, id, {block: "nearest", behavior: "smooth", attempts: 3});
     };

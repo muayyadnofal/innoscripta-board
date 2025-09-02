@@ -1,6 +1,5 @@
-import {Button} from "../../ui/Button";
-import {SwitchIcon} from "../../icons";
 import "./navigation.css"
+import {SwitchAccountDropdown} from "./SwitchAccountDropdown";
 
 export const Navigation = () => {
 
@@ -10,7 +9,7 @@ export const Navigation = () => {
                 <img height={25} src="/innoscripta-logo.png" alt="logo"/>
             </div>
             <div className="navigation__actions">
-                <Button icon={<SwitchIcon/>} variant="text"/>
+                <SwitchAccountDropdown/>
             </div>
         </nav>
     )

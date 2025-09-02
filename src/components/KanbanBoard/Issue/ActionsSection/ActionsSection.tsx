@@ -3,6 +3,7 @@ import {Button} from '../../../ui/Button';
 import './ActionsSection.css';
 import {IssueStatus} from "../../../../types";
 import {useUpdateIssue} from "../../../../domain/useCases/useUpdateIssue";
+import {Can} from "../../../../Permissions/Can";
 
 interface ActionsSectionProps {
     issueId: string;
@@ -27,20 +28,22 @@ export const ActionsSection: React.FC<ActionsSectionProps> = ({issueId, currentS
     }
 
     return (
-        <section className="actions-section">
-            <h4>Actions</h4>
-            <div className="action-buttons">
-                <Button
-                    variant="solid"
-                    size="md"
-                    block
-                    onClick={handleMarkAsResolved}
-                    loading={isLoading}
-                    disabled={isLoading}
-                >
-                    Mark As Resolved
-                </Button>
-            </div>
-        </section>
+        <Can permission="mark_resolved">
+            <section className="actions-section">
+                <h4>Actions</h4>
+                <div className="action-buttons">
+                    <Button
+                        variant="solid"
+                        size="md"
+                        block
+                        onClick={handleMarkAsResolved}
+                        loading={isLoading}
+                        disabled={isLoading}
+                    >
+                        Mark As Resolved
+                    </Button>
+                </div>
+            </section>
+        </Can>
     );
 };
