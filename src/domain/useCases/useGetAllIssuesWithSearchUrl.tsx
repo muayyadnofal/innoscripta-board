@@ -1,17 +1,22 @@
 import {useQuery} from "../../lib/query";
 import {IssueModel} from "../models/Issue.model";
-import {issuesService} from "../../data/api/IssueDataSource";
+import {useCallback, useEffect} from "react";
 import {useObjectSearchParams} from "../../hooks/useObjectSearchParam";
-import {useEffect} from "react";
+import {issuesService} from "../../data/api/IssueDataSource";
 
 export function useGetAllIssuesWithSearchUrl() {
     const {getAll, getParams} = useObjectSearchParams();
     const assignees = getAll("assignee");
     const {search} = getParams();
 
+    const fetchIssues = useCallback(
+        () => issuesService.getAllIssues({assignees, search: search as string}),
+        [assignees, search]
+    );
+
     const query = useQuery<IssueModel[]>(
         "issues",
-        () => issuesService.getAllIssues({assignees, search: search as string}),
+        fetchIssues,
         {
             delay: 500,
             refetchInterval: 10000,
