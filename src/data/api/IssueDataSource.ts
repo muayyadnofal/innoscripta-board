@@ -9,17 +9,18 @@ export class IssueDataSource extends JsonServiceArray<IssueEntity> {
     }
 
 
-    async getAllIssues(filters?: { assignees?: string[]; search?: string }): Promise<IssueModel[]> {
-        const {assignees, search} = filters || {};
-        const response = await this.getAll<IssueEntity>(issue => {
-            const matchesAssignee = assignees?.length ? assignees.includes(issue.assignee) : true;
-            const matchesSearch = search
-                ? issue.title.toLowerCase().includes(search.toLowerCase()) ||
+    async getAllIssues(filters?: { assignees?: string[]; search?: string; limit?: number }): Promise<IssueModel[]> {
+        const {assignees, search, limit} = filters || {};
+        const response = await this.getAll<IssueEntity>(issue =>
+            (!assignees?.length || assignees.includes(issue.assignee)) &&
+            (!search ||
+                issue.title.toLowerCase().includes(search.toLowerCase()) ||
                 issue.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
-                : true;
-            return matchesAssignee && matchesSearch;
-        });
-        return issuesMapper(response);
+            )
+        );
+
+        const mapped = issuesMapper(response);
+        return limit ? mapped.slice(0, limit) : mapped;
     }
 
 

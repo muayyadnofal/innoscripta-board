@@ -1,12 +1,17 @@
 import {useQuery} from "../../lib/query";
 import {IssueModel} from "../models/Issue.model";
 import {issuesService} from "../../data/api/IssueDataSource";
+import {useObjectSearchParams} from "../../hooks/useObjectSearchParam";
 import {useEffect} from "react";
 
-export function useGetAllIssues(search: string) {
+export function useGetAllIssuesWithSearchUrl() {
+    const {getAll, getParams} = useObjectSearchParams();
+    const assignees = getAll("assignee");
+    const {search} = getParams();
+
     const query = useQuery<IssueModel[]>(
-        "issues-search",
-        () => issuesService.getAllIssues({assignees: [], search: search as string, limit: 5}),
+        "issues",
+        () => issuesService.getAllIssues({assignees, search: search as string}),
         {
             delay: 500,
             refetchInterval: 10000,
@@ -16,7 +21,7 @@ export function useGetAllIssues(search: string) {
 
     useEffect(() => {
         query.refetch().then();
-    }, [search]);
+    }, [assignees.join(","), search]);
 
     return query;
 }
