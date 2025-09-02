@@ -8,10 +8,20 @@ export class IssueDataSource extends JsonServiceArray<IssueEntity> {
         super({filePath, persistToStorage: true, storageKey: "issues"});
     }
 
-    async getAllIssues(): Promise<IssueModel[]> {
-        const response = await this.getAll<IssueEntity>();
-        return issuesMapper(response)
+
+    async getAllIssues(filters?: { assignees?: string[]; search?: string }): Promise<IssueModel[]> {
+        const {assignees, search} = filters || {};
+        const response = await this.getAll<IssueEntity>(issue => {
+            const matchesAssignee = assignees?.length ? assignees.includes(issue.assignee) : true;
+            const matchesSearch = search
+                ? issue.title.toLowerCase().includes(search.toLowerCase()) ||
+                issue.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+                : true;
+            return matchesAssignee && matchesSearch;
+        });
+        return issuesMapper(response);
     }
+
 
     async getIssueById(id: string): Promise<IssueModel | null> {
         const response = await this.getAll<IssueEntity>(issue => issue.id === id);
